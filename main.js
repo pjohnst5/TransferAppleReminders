@@ -121,6 +121,7 @@ class TransferAppleRemindersPlugin extends obsidian.Plugin {
 	}
 
 	async syncThenTransfer() {
+		new obsidian.Notice("Transferring reminders…");
 		await triggerRemindersSync();
 		await this.transferReminders();
 		try { execSync('osascript -e \'quit app "Reminders"\''); } catch {}

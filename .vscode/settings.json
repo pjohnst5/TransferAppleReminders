@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^cp /Users/pauljohnston/Documents/TransferAppleReminders/main\\.js /Users/pauljohnston/Documents/TransferAppleReminders/manifest\\.json \"/Users/pauljohnston/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian/\\.obsidian/plugins/transfer-apple-reminders/\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
