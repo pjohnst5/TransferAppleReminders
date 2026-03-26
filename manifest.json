@@ -1,0 +1,9 @@
+{
+    "id": "transfer-apple-reminders",
+    "name": "Transfer Apple Reminders",
+    "version": "1.0.0",
+    "minAppVersion": "0.15.0",
+    "description": "Transfers incomplete Apple Reminders into Daily Notes on startup.",
+    "author": "Paul Johnston",
+    "isDesktopOnly": true
+}
