@@ -131,6 +131,7 @@ class TransferAppleRemindersPlugin extends obsidian.Plugin {
 		const reminders = fetchReminders();
 		if (reminders.length === 0) {
 			console.log("Transfer Apple Reminders: No incomplete reminders found.");
+			new obsidian.Notice("Reminders: 0 imported.");
 			return;
 		}
 
@@ -173,9 +174,7 @@ class TransferAppleRemindersPlugin extends obsidian.Plugin {
 			}
 		}
 
-		if (totalAdded > 0) {
-			new obsidian.Notice(`Reminders: ${totalAdded} imported.`);
-		}
+		new obsidian.Notice(`Reminders: ${totalAdded} imported.`);
 		console.log(`Transfer Apple Reminders: ${totalAdded} reminders added, ${reminders.length} total incomplete.`);
 
 		// Delete all incomplete reminders from Apple Reminders now that they're in Obsidian
