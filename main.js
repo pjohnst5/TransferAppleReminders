@@ -37,7 +37,7 @@ function triggerRemindersSync() {
 			if (err) {
 				console.log("Transfer Apple Reminders: Could not launch Reminders app", err);
 			}
-			setTimeout(resolve, 5000);
+			setTimeout(resolve, 10000);
 		});
 	});
 }
