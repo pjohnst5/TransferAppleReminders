@@ -163,7 +163,7 @@ class TransferAppleRemindersPlugin extends obsidian.Plugin {
 				if (tplFile && tplFile instanceof obsidian.TFile) {
 					template = await this.app.vault.read(tplFile);
 				}
-			if (!template) template = "## Todo\n- [ ] \n";
+			if (!template) template = "## Todo\n";
 				await this.app.vault.create(notePath, template);
 				file = this.app.vault.getAbstractFileByPath(notePath);
 			}
