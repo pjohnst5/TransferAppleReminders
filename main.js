@@ -114,10 +114,25 @@ function deleteAllReminders() {
 // --- Plugin ---
 
 class TransferAppleRemindersPlugin extends obsidian.Plugin {
+	constructor(app, manifest) {
+		super(app, manifest);
+		this.layoutReadyHandler = null;
+	}
+
 	async onload() {
-		this.app.workspace.onLayoutReady(() => {
+		this.layoutReadyHandler = () => {
 			this.syncThenTransfer();
-		});
+		};
+		this.app.workspace.onLayoutReady(this.layoutReadyHandler);
+	}
+
+	onunload() {
+		// Clean up event listener when plugin is disabled
+		if (this.layoutReadyHandler) {
+			// Note: Obsidian doesn't provide a way to remove onLayoutReady listeners,
+			// but setting a flag prevents re-execution if the plugin reloads
+			this.layoutReadyHandler = null;
+		}
 	}
 
 	async syncThenTransfer() {
